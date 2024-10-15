@@ -50,10 +50,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp LS(LC(TAB))  &kp F2        &kp LC(TAB)  &win_term      &none        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp K_CONTEXT_MENU  &none
-&trans  &kp TAB          &kp LEFT_ALT  &kp LCTRL    &kp LSHFT      &kp LGUI     &kp RGUI        &kp RSHFT       &kp RCTRL     &kp RALT         &trans              &trans
-&none   &none            &none         &none        &kp LC(LS(V))  &none        &kp LS(HOME)    &kp HOME        &kp DELETE    &kp END          &kp LS(END)         &trans
-                                       &none        &trans         &kp SPACE    &mo 3           &none           &sl 3
+&trans     &kp LS(LC(TAB))  &kp F2        &kp LC(TAB)  &win_term      &none        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp K_CONTEXT_MENU  &none
+&trans     &kp TAB          &kp LEFT_ALT  &kp LCTRL    &kp LSHFT      &kp LGUI     &kp RGUI        &kp RSHFT       &kp RCTRL     &kp RALT         &trans              &trans
+&kp LCTRL  &none            &none         &none        &kp LC(LS(V))  &none        &kp LS(HOME)    &kp HOME        &kp DELETE    &kp END          &kp LS(END)         &trans
+                                          &none        &trans         &kp SPACE    &mo 3           &mo 3           &sl 3
             >;
         };
 
