@@ -22,6 +22,41 @@
             bindings = <&kp LG(R) &kp W &kp T &kp RET>;
             label = "WIN_TERM";
         };
+
+        PrevTab: PrevTab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(TAB))>;
+            label = "PREVTAB";
+        };
+
+        NextTab: NextTab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(TAB)>;
+            label = "NEXTTAB";
+        };
+
+        CtrlShiftV: CtrlShiftV {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(V))>;
+            label = "CTRLSHIFTV";
+        };
+
+        CtrlAltDel: CtrlAltDel {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(DEL))>;
+            label = "CTRLALTDEL";
+        };
+
+        WinL: WinL {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(L)>;
+            label = "WINL";
+        };
     };
 
     keymap {
@@ -35,49 +70,46 @@
             //         --           | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE      &kp Q  &kp W  &kp E  &kp R      &kp T        &kp Y    &kp U          &kp I      &kp O    &kp P            &none
-&kp LEFT_SHIFT  &kp A  &kp S  &kp D  &kp F      &kp G        &kp H    &kp J          &kp K      &kp L    &lt 2 SEMICOLON  &mt RIGHT_SHIFT SQT
-&kp LCTRL       &kp Z  &kp X  &kp C  &kp V      &kp B        &kp N    &kp M          &kp COMMA  &kp DOT  &kp FSLH         &none
-                              &sl 1  &lt 1 ESC  &kp SPACE    &kp RET  &kp BACKSPACE  &sl 3
+&none  &kp Q  &kp W  &kp E  &kp R         &kp T          &kp Y                &kp U  &kp I      &kp O    &kp P          &none
+&none  &kp A  &kp S  &kp D  &kp F         &kp G          &kp H                &kp J  &kp K      &kp L    &kp SEMICOLON  &kp SQT
+&none  &kp Z  &kp X  &kp C  &kp V         &kp B          &kp N                &kp M  &kp COMMA  &kp DOT  &kp FSLH       &none
+                     &none  &lt 2 ESCAPE  &lt 3 SPACE    &mt RIGHT_SHIFT RET  &mo 1  &none
             >;
         };
 
-        Mods {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        Num {
             bindings = <
-&trans  &kp LS(LC(TAB))  &kp F2        &kp LC(TAB)  &win_term      &none        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp K_CONTEXT_MENU  &none
-&trans  &kp TAB          &kp LEFT_ALT  &kp LCTRL    &kp LSHFT      &kp LGUI     &kp RGUI        &kp RSHFT       &kp RCTRL     &kp RALT         &trans              &trans
-&none   &none            &none         &none        &kp LC(LS(V))  &none        &kp LS(HOME)    &kp HOME        &kp DELETE    &kp END          &kp LS(END)         &trans
-                                       &none        &trans         &kp SPACE    &mo 3           &none           &sl 3
+&trans  &kp N1  &kp N2  &kp N3  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &trans         &trans           &trans     &trans         &trans  &trans
+&trans  &kp N4  &kp N5  &kp N6  &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &sk RIGHT_WIN  &sk RIGHT_SHIFT  &sk RCTRL  &sk RIGHT_ALT  &trans  &trans
+&trans  &kp N7  &kp N8  &kp N9  &kp DOT               &kp EQUAL                &trans         &trans           &trans     &trans         &trans  &trans
+                        &kp N0  &trans                &kp SPACE                &trans         &mo 4            &trans
             >;
         };
 
-        Nums {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        Sym {
             bindings = <
-&kp GRAVE   &kp N1  &kp N2  &kp N3      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp BSLH             &kp EQUAL      &none             &none  &none  &none
-&kp LSHIFT  &kp N4  &kp N5  &kp N6      &kp LBKT              &kp RBKT                 &kp MINUS            &kp LESS_THAN  &kp GREATER_THAN  &none  &none  &none
-&kp LCTRL   &kp N7  &kp N8  &kp N9      &kp PERIOD            &trans                   &none                &kp DELETE     &none             &none  &none  &none
-                            &kp PERIOD  &kp NUMBER_0          &kp SPACE                &mt RIGHT_SHIFT RET  &kp BACKSPACE  &none
+&trans  &trans  &trans        &trans     &trans          &trans          &kp BACKSLASH  &kp EQUAL      &trans            &trans   &trans       &trans
+&trans  &trans  &sk LEFT_ALT  &sk LCTRL  &sk LEFT_SHIFT  &sk LEFT_WIN    &kp MINUS      &kp LESS_THAN  &kp GREATER_THAN  &trans   &trans       &trans
+&trans  &trans  &trans        &trans     &trans          &trans          &kp LS(HOME)   &kp HOME       &kp DEL           &kp END  &kp LS(END)  &trans
+                              &trans     &none           &trans          &trans         &trans         &trans
+            >;
+        };
+
+        Navs {
+            bindings = <
+&trans  &PrevTab  &kp F2        &NextTab   &win_term       &trans          &trans    &CtrlShiftV    &trans        &CtrlAltDel  &WinL               &trans
+&trans  &kp TAB   &sk LEFT_ALT  &sk LCTRL  &sk LEFT_SHIFT  &sk LEFT_WIN    &kp LEFT  &kp DOWN       &kp UP_ARROW  &kp RIGHT    &kp K_CONTEXT_MENU  &trans
+&trans  &trans    &trans        &trans     &trans          &trans          &trans    &kp BACKSPACE  &trans        &trans       &trans              &trans
+                                &trans     &trans          &none           &trans    &trans         &trans
             >;
         };
 
         Funcs {
             bindings = <
-&kp F1  &kp F2      &kp F3      &kp F4     &kp F5      &kp F6      &kp F7    &kp F8     &kp F9     &kp F10   &kp F11          &kp F12
-&trans  &kp LA(F4)  &sk LALT    &sk LCTRL  &sk LSHFT   &sk LGUI    &sk RGUI  &sk RSHFT  &sk RCTRL  &sk RALT  &kp LC(LA(DEL))  &trans
-&none   &bt BT_CLR  &bt BT_PRV  &none      &bt BT_NXT  &trans      &trans    &trans     &trans     &trans    &kp LG(L)        &trans
-                                &trans     &trans      &trans      &trans    &trans     &trans
+&kp F1  &kp F2      &kp F3        &kp F4     &kp F5          &kp F6          &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans      &sk LEFT_ALT  &sk LCTRL  &sk LEFT_SHIFT  &sk LEFT_WIN    &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &bt BT_CLR  &bt BT_PRV    &trans     &bt BT_NXT      &trans          &trans  &trans  &trans  &trans   &trans   &trans
+                                  &trans     &trans          &trans          &trans  &trans  &trans
             >;
         };
 
@@ -86,7 +118,7 @@
 &kp LEFT_ALT  &kp Q  &kp W  &kp E  &kp R      &kp T           &kp Y    &kp U          &kp I      &kp O    &kp P   &trans
 &kp LSHFT     &kp A  &kp S  &kp D  &kp F      &kp G           &kp H    &kp J          &kp K      &kp L    &trans  &kp LC(LA(DELETE))
 &kp LCTRL     &kp Z  &kp X  &kp C  &kp V      &kp B           &kp N    &kp M          &kp COMMA  &kp DOT  &trans  &to 0
-                            &mo 2  &kp SPACE  &lt 5 ESCAPE    &kp RET  &kp BACKSPACE  &trans
+                            &mo 0  &kp SPACE  &lt 6 ESCAPE    &kp RET  &kp BACKSPACE  &trans
             >;
         };
 
@@ -103,7 +135,7 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
-        gaming {
+        IntoFunctionKeys {
             if-layers = <1 2>;
             then-layer = <4>;
         };
