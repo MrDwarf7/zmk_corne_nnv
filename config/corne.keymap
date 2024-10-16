@@ -88,10 +88,10 @@
 
         Navs {
             bindings = <
-&trans  &PrevTab  &kp F2        &NextTab   &win_term       &trans          &trans    &CtrlShiftV    &trans        &CtrlAltDel  &WinL               &trans
-&trans  &kp TAB   &sk LEFT_ALT  &sk LCTRL  &sk LEFT_SHIFT  &sk LEFT_WIN    &kp LEFT  &kp DOWN       &kp UP_ARROW  &kp RIGHT    &kp K_CONTEXT_MENU  &trans
-&trans  &trans    &trans        &trans     &trans          &trans          &trans    &kp BACKSPACE  &trans        &trans       &trans              &trans
-                                &trans     &trans          &none           &trans    &trans         &trans
+&trans  &PrevTab  &kp F2        &NextTab   &win_term       &trans          &trans         &CtrlShiftV    &trans        &CtrlAltDel  &WinL               &trans
+&trans  &kp TAB   &sk LEFT_ALT  &sk LCTRL  &sk LEFT_SHIFT  &sk LEFT_WIN    &kp LEFT       &kp DOWN       &kp UP_ARROW  &kp RIGHT    &kp K_CONTEXT_MENU  &trans
+&trans  &trans    &trans        &trans     &trans          &trans          &trans         &kp BACKSPACE  &trans        &trans       &trans              &trans
+                                &trans     &trans          &none           &kp RIGHT_ALT  &kp BACKSPACE  &trans
             >;
         };
 
