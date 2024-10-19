@@ -59,16 +59,7 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        ESC_Combo {
-            bindings = <&kp TAB>;
-            key-positions = <1 2>;
-            timeout-ms = <60>;
-            layers = <0>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
