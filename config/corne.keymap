@@ -57,6 +57,20 @@
             bindings = <&kp LG(L)>;
             label = "WINL";
         };
+
+        WezTerm: WezTerm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(R) &kp W &kp Z &kp T &kp RET>;
+            label = "WEZTERM";
+        };
+
+        WindowsKill: WindowsKill {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(F4)>;
+            label = "WINDOWSKILL";
+        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -81,10 +95,10 @@
 
         NAVS {
             bindings = <
-&trans  &PrevTab  &kp F2        &NextTab   &win_term       &trans          &kp LEFT_ARROW  &kp DOWN_ARROW   &kp UP_ARROW  &kp RIGHT_ARROW  &kp K_CONTEXT_MENU  &trans
-&trans  &kp TAB   &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &kp LEFT_WIN    &kp RIGHT_WIN   &kp RIGHT_SHIFT  &kp RCTRL     &kp RIGHT_ALT    &kp GRAVE           &trans
-&trans  &trans    &trans        &trans     &CtrlShiftV     &trans          &kp LS(HOME)    &kp HOME         &kp DEL       &kp END          &kp LS(END)         &trans
-                                &trans     &trans          &none           &trans          &kp BACKSPACE    &trans
+&WindowsKill  &PrevTab  &kp F2        &NextTab   &win_term       &WezTerm        &kp LEFT_ARROW  &kp DOWN_ARROW   &kp UP_ARROW  &kp RIGHT_ARROW  &kp K_CONTEXT_MENU  &trans
+&trans        &kp TAB   &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &kp LEFT_WIN    &kp RIGHT_WIN   &kp RIGHT_SHIFT  &kp RCTRL     &kp RIGHT_ALT    &kp GRAVE           &trans
+&trans        &trans    &trans        &trans     &CtrlShiftV     &trans          &kp LS(HOME)    &kp HOME         &kp DEL       &kp END          &kp LS(END)         &trans
+                                      &trans     &trans          &none           &trans          &kp BACKSPACE    &trans
             >;
         };
 
