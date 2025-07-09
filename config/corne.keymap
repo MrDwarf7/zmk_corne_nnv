@@ -116,10 +116,10 @@
 
         NUMS {
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp BACKSLASH        &kp EQUAL      &kp DEL  &trans  &trans         &trans
-&kp TAB    &kp N4  &kp N5  &kp N6   &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &kp MINUS            &kp LT         &kp GT   &trans  &kp BACKSPACE  &trans
-&kp LCTRL  &kp N7  &kp N8  &kp N9   &kp DOT               &kp EQUAL                &kp BACKSPACE        &kp RIGHT_WIN  &trans   &trans  &trans         &trans
-                           &kp DOT  &kp N0                &kp SPACE                &mt RIGHT_SHIFT RET  &trans         &trans
+&kp GRAVE  &kp N1  &kp N2  &kp N3   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp BACKSLASH        &kp EQUAL  &kp RIGHT_WIN  &trans  &trans         &trans
+&kp TAB    &kp N4  &kp N5  &kp N6   &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &kp MINUS            &kp LT     &kp GT         &trans  &kp BACKSPACE  &trans
+&kp LCTRL  &kp N7  &kp N8  &kp N9   &kp DOT               &kp EQUAL                &kp BACKSPACE        &trans     &trans         &trans  &trans         &trans
+                           &kp DOT  &kp N0                &kp SPACE                &mt RIGHT_SHIFT RET  &trans     &trans
             >;
         };
 
