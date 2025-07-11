@@ -90,7 +90,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        DEFAULT_LAYER {
             // -----------------------------------------------------------------------------------------
             // |  ESC |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
             // | L_SHIFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
